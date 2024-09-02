@@ -1,0 +1,306 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#minicircle{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 999;
+    pointer-events: none; /* Allows mouse events to pass through the circle */
+    transform: translate(-50%, -50%); /* Centers the circle on the cursor */
+    transition: all cubic-bezier(0.19,1,0.22,1) 1s;
+
+    
+}
+.bounding {
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.boundingelem {
+    transform: translateY(100%); /* Starts below its container */
+    opacity: 0;
+    transition: transform 2s ease, opacity 2s ease; /* Ensure smooth transition */
+}
+
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.main{
+    width:100%;
+    background-color: black;
+}
+#hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    font-family:Georgia,  serif;
+    color: #fff;
+}
+#nav{
+    width: 100%;
+    
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:#fff;
+}
+#nav a{
+    
+    color: #fff;
+    text-decoration: none;
+}
+#heading{
+    margin-top: 90px;
+
+}
+#heading h1{
+    margin-left: 50px;
+    opacity: .6;
+ font-size: 9vw;
+ line-height: 1;
+ font-family: Georgia,  serif;
+ font-weight: 900;
+ text-transform: uppercase;
+
+
+}
+#heading #secondh1{
+    margin-left: 230px;
+}
+.blocktext{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    width: fit-content;
+   
+
+}
+.blocktext h5{
+    font-size: 16px;;
+text-align: right !important;
+
+
+}
+.chhotiheadings{
+    margin-top: 100px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+}
+.chhotiheadings h5{
+    margin-top: 20px;
+    text-align: right;
+    font-size: 1vw;
+    margin-top:.5vw;
+    text-transform:uppercase;
+
+}
+#hero-footer{
+    padding: 0 2vw;
+    width:100%;
+    position: absolute;
+    bottom: 3%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+#hero-footer a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+#hero-footer a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+#hero-footer #iconset{
+  display: flex;
+  gap: 10px;
+   
+}
+#hero-footer .circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+    background-color: #888;
+    border-radius: 50%;
+   
+}
+#second{
+    padding-right:10vw;
+    padding-top: 200px;
+    background-color: black;
+    width: 100%;
+    height: 150vh;
+
+}
+.elem{
+    position: relative;
+    width: 100%;
+    padding: 3.5vw 4vw;
+    padding-right: 0;
+    border-top: 1px solid #888;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    color:#ddc1c1 ;
+   
+    
+
+}
+
+
+.elemlast{
+    border-bottom: 1px solid #888;
+}
+/* Style for headings within .elem */
+.elem h1 {
+    color: #ddc1c1;
+    font-size: 8vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    opacity: 0.7;
+    position: relative; /* Ensure headings do not overlap with the image */
+    z-index: 1; /* Ensure text is below the image */
+}
+
+/* Style for images */
+.elem img {
+    position: absolute; /* Positioned relative to the parent .elem */
+    height: auto;
+    width: 320px;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+    z-index: 2; /* Ensure images are on top of the text */
+    pointer-events: none; /* Prevent interaction with the images */
+    top: 20%; /* Center vertically */
+    left: 20%; /* Position to the right of the text */
+    transform: translateY(-50%) translateX(20px); /* Adjust positioning if needed */
+}
+
+
+#about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10vw 10vw;
+    padding-left: 40vw;
+    gap: 30px;
+    color: #fff;
+    width: 100%;
+    height:100vh;
+    background-color: black;
+
+}
+
+#about img{
+    width: 200px;
+    border-radius: 50%;
+    
+  
+}
+#textabout{
+width: 25rem;
+
+}
+#textabout h5{
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+#textabout h1{
+    font-size: 3.5vw;
+    font-weight: 900;
+   
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: .6;
+}
+#textabout p{
+    opacity: .6;
+    font-size: 1.4vw;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+#textabout a{
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 12px 22px;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 15px;
+
+}
+#subscribe{
+    background-color: black;
+    color: #fff;
+
+    padding: 20px 30px;
+    padding-bottom: 7vw;
+}
+#subscribe h5{
+    text-transform: uppercase;
+    opacity: .6;
+
+}
+#subscribe h3{
+    text-transform: uppercase;
+    font-size: 1.2vw;
+    margin-top: 10px;
+}
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 30px;
+    background-color: black;
+    color: #fff;
+    
+}
+#footerleft{
+display: flex;
+gap: 20px;
+
+}
+#footerright{
+    gap: 30px;
+    display: flex;
+    align-items: center;
+}
+#footer a{
+    gap: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+}
